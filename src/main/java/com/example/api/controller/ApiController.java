@@ -30,9 +30,9 @@ public class ApiController {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping(path = "/tasks")
-    public ResponseEntity<Void> clearTasks() {
-        tasks = new ArrayList<>();
+    @DeleteMapping(path = "/tasks/{task}")
+    public ResponseEntity<Void> clearTasks(@PathVariable String task) {
+        tasks.remove(task);
         return ResponseEntity.ok().build();
     }
 }
